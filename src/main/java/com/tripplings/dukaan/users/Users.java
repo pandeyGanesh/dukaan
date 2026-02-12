@@ -1,4 +1,4 @@
-package com.tripplings.dukaan.user;
+package com.tripplings.dukaan.users;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,12 +13,12 @@ import lombok.Setter;
 import java.time.LocalDateTime; // Import for timestamp
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
