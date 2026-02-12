@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.2</version>
+		<version>4.0.2</version> <!-- Use a stable 3.2.x version -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tripplings</groupId>
@@ -30,6 +30,7 @@
 		<java.version>25</java.version>
 		<lombok.version>1.18.42</lombok.version>
 		<postgresql.version>42.7.9</postgresql.version>
+		<liquibase.version>5.0.1</liquibase.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,11 +57,20 @@
 			<version>${postgresql.version}</version>
 		</dependency>
 
+		<!-- LIQUIBASE (DATABASE MIGRATION TOOL) -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>${liquibase.version}</version>
+		</dependency>
+
+		<!-- LIQUIBASE STARTER : REQUIRED WHEN USING starter-webmvc instead of starter-web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webmvc-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-liquibase</artifactId>
+<!--			<version>4.0.3</version>-->
 		</dependency>
+
 	</dependencies>
 
 	<build>

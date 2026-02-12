@@ -2,9 +2,12 @@ spring:
   application:
     name: dukaan
   datasource:
-    url: jdbc:postgresql://localhost:5432/tripplings?currentSchema=dukaan
+    url: jdbc:postgresql://localhost:5432/tripplings_liquibase?currentSchema=dukaan
     username: postgres
     password: postgres
-  jpa:
-    hibernate:
-      ddl-auto: create
+  logging:
+    level:
+      org.liquibase: DEBUG
+  liquibase:
+    # MODIFIED: Removed enabled: true, as it's default when change-log is set.
+    change-log: classpath:/changelog.xml

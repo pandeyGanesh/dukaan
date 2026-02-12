@@ -14,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Setter
-class Role {
+class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private UUID id;

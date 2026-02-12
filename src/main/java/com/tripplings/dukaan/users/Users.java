@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime; // Import for timestamp
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
@@ -21,8 +22,8 @@ import java.time.LocalDateTime; // Import for timestamp
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private UUID id;
 
     // Renamed 'name' to 'firstName' and added other name components
     private String firstName;
